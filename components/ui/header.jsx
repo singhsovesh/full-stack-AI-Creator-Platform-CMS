@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useEffect } from "react";
-import Link from "next/link";
-import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
 import { useStoreUser } from "@/hooks/use-store-user";
-import { BarLoader } from "react-spinners";
-import { usePathname, useRouter } from "next/navigation";
-import { Button } from "./button"; // Fixed path
-import { LayoutDashboard } from "lucide-react"; // Uncommented
+import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { Authenticated, Unauthenticated } from "convex/react";
+import { LayoutDashboard } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { BarLoader } from "react-spinners";
 
 export default function Header() {
   const { isLoading, isAuthenticated } = useStoreUser();
